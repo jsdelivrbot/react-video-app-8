@@ -7,6 +7,7 @@ import * as Keys from '../API_keys';
 // Components
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 class App extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
 
         this.state = { videos: [] };
 
-        YTSearch({key: Keys.youtube, term: 'surfboards'}, (videos) => {
+        YTSearch({key: Keys.youtube, term: 'post malone'}, (videos) => {
             this.setState({ videos });
         });
     }
@@ -23,6 +24,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoDetail video={this.state.videos[0]} />
                 <VideoList videos={this.state.videos} />
             </div>
         )
