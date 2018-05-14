@@ -16,7 +16,7 @@ const VideoDetail = ({video}) => {
             <div className='embed-responsive embed-responsive-16by9'>
                 <iframe className='embed-responsive-item' src={url}></iframe>
             </div>
-            <div className='description'>
+            <div className='description list-group-item'>
                 <div>{video.snippet.description}</div>
             </div>
         </div>
